@@ -13,7 +13,7 @@ import mysql.connector
 
 # read JSON data
 print("start reading json file")
-with open("鴻海2017分鐘資料.json") as input_file:
+with open("fund2317_secData.json") as input_file:
     Raw_data = json.load(input_file)
 print("done reading json file!")
 
