@@ -37,9 +37,25 @@ def GetFirstDate(name):
     return np.array([d['Time'] for d in Raw_data if (d['Name'] == name)].pop(0))
 ## end get data ##
 
+## get data from web ##
+# def get_close_data(sid):
+#     df = web.DataReader(sid,"google",datetime(2017,1,1))
+#     close = np.asarray(df['Close'])        # convert series to 2d-array
+#     return close
+#
+# def get_high_data(sid):
+#     df = web.DataReader(sid, "google", datetime(2017, 1, 1))
+#     high = np.asarray(df['High'])  # convert series to 2d-array
+#     return high
+#
+# def get_low_data(sid):
+#     df = web.DataReader(sid, "google", datetime(2017, 1, 1))
+#     low = np.asarray(df['Low'])  # convert series to 2d-array
+#     return low
+## end get data from web ##
+
 ## TA index ##
 ##### MA BIAS RSI MACD KD WR MOM PSY ######
-
 def MA(close, timeperiod, matype=0):
     # matype: 0=SMA, 1=EMA, 2=WMA, 3=DEMA, 4=TEMA, 5=TRIMA, 6=KAMA, 7=MAMA, 8=T3 (Default=SMA)
     return talib.MA(close, timeperiod, matype)
